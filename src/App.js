@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { CardList } from './components/CardList/CardList'
+import { Header } from './components/Header'
+import UsersJson from './assets/users.json'
+import { Card } from './components/Card/Card'
+import { Content } from './MyStyled.styled'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+function App({ title }) {
+	const HeaderTop = styled.div`
+		padding: 20px 20px;
+	`
+	return (
+		<HeaderTop>
+			<Header title='Header' />
+			<Content>
+				<CardList users={UsersJson} />
+			</Content>
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+			{/* {userJson.map(user => (
+				<Card
+					// {...user}
+					name={user.name}
+					bio={user.bio}
+					img={user.img}
+					email={user.email}
+					skills={user.skills}
+				/>
+			))} */}
+		</HeaderTop>
+	)
 }
 
-export default App;
+export default App
+
+App.propTypes = {
+	title: PropTypes.string,
+}

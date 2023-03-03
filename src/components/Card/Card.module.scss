@@ -1,0 +1,26 @@
+.card {
+	border-radius: 8px;
+	border: 2px solid;
+	padding: 25px 15px;
+	width: 30%;
+	background-color: lightblue;
+	box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+	transition: all 0.3s linear;
+	img {
+		width: 20%;
+		border-radius: 50%;
+		display: block;
+		margin: 0 auto;
+	}
+	.title {
+		text-align: center;
+	}
+	&:hover {
+		box-shadow: 0px 0px 9px 0px blue;
+		cursor: pointer;
+	}
+}
+
+.dontWork {
+	background-color: tomato;
+}
